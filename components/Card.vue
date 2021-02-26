@@ -1,8 +1,9 @@
 <template>
   <div class="column">
+    <a :href="link">
     <div class="card">
       <header class="card-header">
-        <p class="card-header-title has-text-grey">
+        <p class="card-header-title has-text-grey has-text-centered">
           {{ title }}
         </p>
       </header>
@@ -23,6 +24,7 @@
         </div>
       </footer>
     </div>
+    </a>
   </div>
 </template>
 
@@ -36,7 +38,11 @@ export default {
     icon: {
       type: String,
       required: true
-    }
+    },
+    link: {
+      type: String,
+      required: true
+    },
   }
 }
 </script>

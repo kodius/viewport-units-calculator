@@ -2,25 +2,23 @@
   <section class="section">
     <div class="columns is-mobile">
       <card
-        title="Free"
-        icon="github"
+        title="Viewport Width"
+        icon="account"
+        link="/viewport-width"
       >
-        Open source on <a href="https://github.com/buefy/buefy">
-          GitHub
-        </a>
+        VW
       </card>
 
       <card
-        title="Responsive"
-        icon="cellphone-link"
+        title="Viewport Height"
+        icon="rocket"
+        link="/viewport-height"
       >
-        <b class="has-text-grey">
-          Every
-        </b> component is responsive
+        VH
       </card>
 
       <card
-        title="Modern"
+        title="Advanced Options VW"
         icon="alert-decagram"
       >
         Built with <a href="https://vuejs.org/">
@@ -31,7 +29,7 @@
       </card>
 
       <card
-        title="Lightweight"
+        title="Advanced Options VH"
         icon="arrange-bring-to-front"
       >
         No other internal dependency

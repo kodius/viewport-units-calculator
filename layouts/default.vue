@@ -63,9 +63,14 @@ export default {
           to: { name: 'index' }
         },
         {
-          title: 'Inspire',
-          icon: 'lightbulb',
-          to: { name: 'inspire' }
+          title: 'Viewport Width',
+          icon: 'account',
+          to: { name: 'viewport-width' }
+        },
+        {
+          title: 'Viewport Height',
+          icon: 'rocket',
+          to: { name: 'viewport-height' }
         }
       ]
     }
