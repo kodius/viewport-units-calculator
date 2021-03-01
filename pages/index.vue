@@ -20,17 +20,15 @@
       <card
         title="Advanced Options VW"
         icon="alert-decagram"
+        link="/advanced-vw"
       >
-        Built with <a href="https://vuejs.org/">
-          Vue.js
-        </a> and <a href="http://bulma.io/">
-          Bulma
-        </a>
+       Adv VW
       </card>
 
       <card
         title="Advanced Options VH"
         icon="arrange-bring-to-front"
+        link="/advanced-vw"
       >
         No other internal dependency
       </card>

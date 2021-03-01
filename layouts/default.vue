@@ -71,6 +71,11 @@ export default {
           title: 'Viewport Height',
           icon: 'rocket',
           to: { name: 'viewport-height' }
+        },
+        {
+          title: 'Advanced VW',
+          icon: 'rocket',
+          to: { name: 'advanced-vw' }
         }
       ]
     }
