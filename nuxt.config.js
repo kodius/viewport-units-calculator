@@ -39,6 +39,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/buefy
     'nuxt-buefy',
+    'nuxt-clipboard2',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
