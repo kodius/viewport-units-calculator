@@ -74,7 +74,7 @@ export default {
         },
         {
           title: 'Advanced VW',
-          icon: 'rocket',
+          icon: 'view-dashboard',
           to: { name: 'advanced-vw' }
         }
       ]

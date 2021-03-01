@@ -1,7 +1,7 @@
 <template>
   <div class="vw-calculator-container">
     <div class="dynamic-breakpoint">
-      <h1>Pixel to Viewport Calculator (Dynamic Breakpoint)</h1>
+      <h1>Pixel to VW Converter (Dynamic Breakpoint)</h1>
       <div>
         <b-field label="Pixel value">
           <b-numberinput controls-rounded type="is-dark" v-model="initialSize"></b-numberinput>
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="fixed-breakpoint">
-      <h1>Pixel to Viewport Calculator (Fixed Breakpoint)</h1>
+      <h1>Pixel to VW Converter (Fixed Breakpoint)</h1>
       <div>
         <b-field label="Pixel value">
           <b-numberinput controls-rounded type="is-dark" v-model="fixedInitialSize"></b-numberinput>
@@ -45,11 +45,10 @@
 export default {
     data: function() {
     return {
-      initialSize: 1,
-      fixedInitialSize: 1,
-      maxSize: 1,
-      breakpoint: 1,
-      fixedBreakpoint: 1
+      initialSize: 16,
+      fixedInitialSize: 16,
+      breakpoint: 1920,
+      fixedBreakpoint: 1920
     }
   },
   computed: {
@@ -66,10 +65,13 @@ export default {
 
   mounted() {
     let that = this;
-    this.breakpoint = document.getElementById('__nuxt').offsetWidth;
-    window.addEventListener('resize', function () {
-      that.breakpoint = document.getElementById('__nuxt').offsetWidth;
-    });
+    if (process.browser) {
+      this.breakpoint = window.innerWidth;
+
+      window.addEventListener('resize', function () {
+        that.breakpoint = window.innerWidth;
+      });
+    }
   },
 
   methods: {
@@ -92,8 +94,7 @@ h1 {
 
     .dynamic-breakpoint, .fixed-breakpoint {
       width: 45%;
-      border: 1px solid #7957d5;
-      box-shadow: 10px 10px 10px;
+      box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
       padding: 2vw;
       margin-top: 2vw;
     }

@@ -1,32 +1,40 @@
 <template>
-  <div class="container">
-    <div class="nest">
-      <h1>Viewport Height Calculator</h1>
+  <div class="vw-calculator-container">
+    <div class="dynamic-breakpoint">
+      <h1>Pixel to VH Converter (Dynamic Breakpoint)</h1>
       <div>
-        <b-field label="Pixel Size">
-          <b-input type="number" name="size" placeholder="Initial Size" v-model="initialSize"></b-input>
+        <b-field label="Pixel value">
+          <b-numberinput controls-rounded type="is-dark" v-model="initialSize"></b-numberinput>
         </b-field>
-        <b-field label="Viewport Size">
-          <b-input type="number" name="size" placeholder="Viewport Size" v-model="breakpoint"></b-input>
+        <b-field label="Breakpoint value">
+          <b-numberinput controls-rounded type="is-dark" v-model="breakpoint"></b-numberinput>
         </b-field>
-        <div v-if="viewport != 0">
-          <span class="result__label">Viewport: </span>
-          <span class="result__value">{{viewport}}<small>vw</small></span>
+        <div v-if="initialSize != 0" class="viewport-result">
+          <div>
+            <span class="result__value">Value: {{viewport}}</span>
+          </div>
+          <div>
+            <b-button outlined type="is-primary is-light" @click="copyValue" v-clipboard:copy="viewport">Copy!</b-button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="nekako">
-      <h1>Viewport Height Calculator (Fixed Breakpoint)</h1>
+    <div class="fixed-breakpoint">
+      <h1>Pixel to VH Converter (Fixed Breakpoint)</h1>
       <div>
-        <b-field label="Pixel Size">
-          <b-input type="number" name="size" placeholder="Initial Size" v-model="initialSize"></b-input>
+        <b-field label="Pixel value">
+          <b-numberinput controls-rounded type="is-dark" v-model="fixedInitialSize"></b-numberinput>
         </b-field>
-        <b-field label="Viewport Size">
-          <b-input type="number" name="size" placeholder="Viewport Size" v-model="fixedBreakpoint"></b-input>
+        <b-field label="Breakpoint value">
+          <b-numberinput controls-rounded type="is-dark" v-model="fixedBreakpoint"></b-numberinput>
         </b-field>
-        <div v-if="fixedViewport != 0">
-          <span class="result__label">Viewport: </span>
-          <span class="result__value">{{fixedViewport}}<small>vw</small></span>
+        <div v-if="fixedViewport != 0" class="viewport-result">
+          <div>
+            <span class="result__value">Value: {{fixedViewport}}</span>
+          </div>
+          <div>
+            <b-button outlined type="is-primary is-light" @click="copyValue" v-clipboard:copy="fixedViewport">Copy!</b-button>
+          </div>
         </div>
       </div>
     </div>
@@ -37,29 +45,39 @@
 export default {
     data: function() {
     return {
-      initialSize: Number,
-      maxSize: Number,
-      breakpoint: Number,
-      fixedBreakpoint: Number
+      initialSize: 16,
+      fixedInitialSize: 16,
+      breakpoint: 978,
+      fixedBreakpoint: 978
     }
   },
   computed: {
     viewport: function() {
       // unit = size * (100 / breakpoint)
-      return (this.initialSize * (100 / this.breakpoint))
+      return `${(this.initialSize * (100 / this.breakpoint))}vh`
     },
 
     fixedViewport: function() {
       // unit = size * (100 / breakpoint)
-      return (this.initialSize * (100 / this.fixedBreakpoint))
+      return `${(this.fixedInitialSize * (100 / this.fixedBreakpoint))}vh`
     }
   },
 
   mounted() {
     let that = this;
-    window.addEventListener('resize', function () {
-      that.breakpoint = document.getElementById('__nuxt').offsetWidth;
-    });
+    if (process.browser) {
+      that.breakpoint = window.innerHeight;
+
+      window.addEventListener('resize', function () {
+        that.breakpoint = window.innerHeight;
+      });
+    }
   },
+
+  methods: {
+    copyValue() {
+      this.$buefy.notification.open('Copied!!')
+    }
+  }
 }
 </script>
