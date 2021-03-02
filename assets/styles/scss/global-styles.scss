@@ -35,6 +35,15 @@ html, body {
 h1 {
   text-align: center;
   margin: 1vw 0;
+  font-weight: 600;
+}
+
+.m-left-1 {
+  margin-left: 1vw;
+}
+
+.m-left-2 {
+  margin-left: 2vw;
 }
 
 input[type="Number"] {
@@ -44,6 +53,10 @@ input[type="Number"] {
 
 .result__value {
   font-weight: bold;
+}
+
+.page-container {
+  padding-bottom: 8rem;
 }
 
 .vw-calculator-container {
@@ -62,6 +75,33 @@ input[type="Number"] {
 
     button {
       margin-top: 1vw;
+    }
+
+    code {
+      @media screen and (max-width: 768px) {
+        white-space: pre-line;
+      }
+    }
+  }
+}
+
+.advanced-options-container {
+  .input-fields-c {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+
+    .font-size, .screen-size {
+      width: 45%;
+    }
+  }
+
+  .viewport-result {
+    margin-top: 2rem;
+
+    .btn-container {
+      text-align: center;
+      margin-top: 2vw;
     }
   }
 }
@@ -99,6 +139,42 @@ input[type="Number"] {
 
   .vw-calculator-container {
     flex-direction: column;
+
+    .card {
+      width: 90%;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .fixed-breakpoint {
+      margin-top: 3rem;
+    }
+  }
+
+  .advanced-opt {
+    h1 {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .advanced-options-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .input-fields-c {
+    flex-direction: column;
+    padding: 2rem;
+
+    .font-size, .screen-size {
+      width: 100% !important;
+    }
+  }
+
+  .viewport-result {
+    .btn-container {
+      margin-top: 5vw !important;
+    }
   }
 }
 

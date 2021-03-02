@@ -9,11 +9,11 @@
         <b-field label="Breakpoint value">
           <b-input type="number" placeholder="Pixel value" v-model="breakpoint"></b-input>
         </b-field>
-        <div class="viewport-result">
+        <div v-if="initialSize != undefined && breakpoint != undefined && viewport != 'NaNvw' && viewport != 'Infinityvw'" class="viewport-result">
           <div>
             <span class="result__value">Result: {{viewport}}</span>
           </div>
-          <div>
+          <div class="btn-container">
             <b-button outlined type="is-primary is-light" @click="copyValue" v-clipboard:copy="viewport">Copy!</b-button>
           </div>
         </div>
@@ -28,11 +28,11 @@
         <b-field label="Breakpoint value">
           <b-input type="number" placeholder="Pixel value" v-model="fixedBreakpoint"></b-input>
         </b-field>
-        <div class="viewport-result">
+        <div v-if="fixedInitialSize != undefined && fixedBreakpoint != undefined && fixedViewport != 'NaNvw' && fixedViewport != 'Infinityvw'" class="viewport-result">
           <div>
             <span class="result__value">Result: {{fixedViewport}}</span>
           </div>
-          <div>
+          <div class="btn-container">
             <b-button outlined type="is-primary is-light" @click="copyValue" v-clipboard:copy="fixedViewport">Copy!</b-button>
           </div>
         </div>
@@ -45,10 +45,10 @@
 export default {
     data: function() {
     return {
-      initialSize: Number,
-      fixedInitialSize: Number,
-      breakpoint: Number,
-      fixedBreakpoint: Number
+      initialSize: undefined,
+      fixedInitialSize: undefined,
+      breakpoint: undefined,
+      fixedBreakpoint: undefined
     }
   },
   computed: {

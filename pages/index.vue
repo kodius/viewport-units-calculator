@@ -18,19 +18,11 @@
       </card>
 
       <card
-        title="Advanced Options VW"
-        icon="alert-decagram"
-        link="/advanced-vw"
-      >
-       Adv VW
-      </card>
-
-      <card
-        title="Advanced Options VH"
+        title="Advanced Options"
         icon="arrange-bring-to-front"
-        link="/advanced-vw"
+        link="/advanced-options"
       >
-        No other internal dependency
+      Advanced
       </card>
     </div>
   </section>

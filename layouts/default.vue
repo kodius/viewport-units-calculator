@@ -8,11 +8,12 @@
       <div class="navbar-brand">
         <a
           class="navbar-item"
-          href="/"
+          href="https://kodius.com/"
+          target="_blank"
         >
           <img
-            src="~assets/buefy.png"
-            alt="Buefy"
+            src="~assets/kodius.png"
+            alt="Kodius Logo"
             height="28"
           >
         </a>
@@ -45,14 +46,14 @@
         </ul>
       </aside>
 
-      <div class="container column is-9">
+      <div class="container column is-9 page-container">
         <nuxt />
       </div>
     </section>
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          Created by <a href="">Kodius </a>
+          Created by <a href="https://github.com/ProXyTG" target="_blank">ProXyTG</a> @ <a href="https://kodius.com/" target="_blank">Kodius </a>
         </p>
       </div>
     </footer>
