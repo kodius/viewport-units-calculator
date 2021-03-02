@@ -1,17 +1,17 @@
 <template>
   <div class="vw-calculator-container">
-    <div class="dynamic-breakpoint">
+    <div class="dynamic-breakpoint card">
       <h1>Pixel to VH Converter (Dynamic Breakpoint)</h1>
       <div>
         <b-field label="Pixel value">
-          <b-numberinput controls-rounded type="is-dark" v-model="initialSize"></b-numberinput>
+          <b-input type="number" placeholder="Pixel value" v-model="initialSize"></b-input>
         </b-field>
         <b-field label="Breakpoint value">
-          <b-numberinput controls-rounded type="is-dark" v-model="breakpoint"></b-numberinput>
+          <b-input type="number" placeholder="Pixel value" v-model="breakpoint"></b-input>
         </b-field>
         <div v-if="initialSize != 0" class="viewport-result">
           <div>
-            <span class="result__value">Value: {{viewport}}</span>
+            <span class="result__value">Result: {{viewport}}</span>
           </div>
           <div>
             <b-button outlined type="is-primary is-light" @click="copyValue" v-clipboard:copy="viewport">Copy!</b-button>
@@ -19,18 +19,18 @@
         </div>
       </div>
     </div>
-    <div class="fixed-breakpoint">
+    <div class="fixed-breakpoint card">
       <h1>Pixel to VH Converter (Fixed Breakpoint)</h1>
       <div>
         <b-field label="Pixel value">
-          <b-numberinput controls-rounded type="is-dark" v-model="fixedInitialSize"></b-numberinput>
+          <b-input type="number" placeholder="Pixel value" v-model="fixedInitialSize"></b-input>
         </b-field>
         <b-field label="Breakpoint value">
-          <b-numberinput controls-rounded type="is-dark" v-model="fixedBreakpoint"></b-numberinput>
+          <b-input type="number" placeholder="Pixel value" v-model="fixedBreakpoint"></b-input>
         </b-field>
         <div v-if="fixedViewport != 0" class="viewport-result">
           <div>
-            <span class="result__value">Value: {{fixedViewport}}</span>
+            <span class="result__value">Result: {{fixedViewport}}</span>
           </div>
           <div>
             <b-button outlined type="is-primary is-light" @click="copyValue" v-clipboard:copy="fixedViewport">Copy!</b-button>
@@ -45,10 +45,10 @@
 export default {
     data: function() {
     return {
-      initialSize: 16,
-      fixedInitialSize: 16,
-      breakpoint: 978,
-      fixedBreakpoint: 978
+      initialSize: Number,
+      fixedInitialSize: Number,
+      breakpoint: Number,
+      fixedBreakpoint: Number
     }
   },
   computed: {

@@ -1,6 +1,6 @@
 <template>
   <section class="section">
-    <div class="columns is-mobile">
+    <div class="columns is-mobile card-container">
       <card
         title="Viewport Width"
         icon="account"

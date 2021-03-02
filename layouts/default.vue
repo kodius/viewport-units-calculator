@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page-container">
     <nav
       class="navbar header has-shadow is-primary"
       role="navigation"
@@ -28,7 +28,7 @@
     <section class="main-content columns">
       <aside class="column is-2 section">
         <p class="menu-label is-hidden-touch">
-          General
+          MENU
         </p>
         <ul class="menu-list">
           <li
@@ -45,10 +45,17 @@
         </ul>
       </aside>
 
-      <div class="container column is-10">
+      <div class="container column is-9">
         <nuxt />
       </div>
     </section>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          Created by <a href="">Kodius </a>
+        </p>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -73,12 +80,15 @@ export default {
           to: { name: 'viewport-height' }
         },
         {
-          title: 'Advanced VW',
+          title: 'Advanced Options',
           icon: 'view-dashboard',
-          to: { name: 'advanced-vw' }
+          to: { name: 'advanced-options' }
         }
       ]
     }
   }
 }
 </script>
+
+<style lang="scss" src="@/assets/styles/scss/global-styles.scss">
+</style>
