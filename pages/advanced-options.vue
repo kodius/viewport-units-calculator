@@ -3,6 +3,32 @@
     <div class="advanced-opt">
       <h1>Responsive Font size Calculator</h1>
       <div class="advanced-options-container">
+        <div class="how-to-use-it-part">
+          <b-tooltip
+            label="Set font-size and media query range and you will get complete code for responsive value in that range"
+            position="is-bottom"
+            size="is-large"
+            multilined>
+            <b-button type="is-primary" outlined>How to use it</b-button>
+          </b-tooltip>
+        </div>
+        <div class="example-part">
+          <h3>Example:</h3>
+          <div class="example-content">
+            <div class="example-description">
+              <p>Let’s say we want font-size:</p>
+              <p>- to be 16px on 320px screen and smaller</p>
+              <p>- to go between 16px on a 320px screen to 25px on a 1000px screen</p>
+              <p>- to be 25px on 1000px screen and larger</p>
+            </div>
+            <div class="example-code">
+              <h4>Min Font Size: 16</h4>
+              <h4>Max Font Size: 25</h4>
+              <h4>Screen Size From: 320</h4>
+              <h4>Screen Size To: 1000</h4>
+            </div>
+          </div>
+        </div>
         <div class="input-fields-c card">
           <div class="font-size">
             <b-field label="Min Font Size">
@@ -25,16 +51,16 @@
           <pre>
           <code>
             <span>html {</span>
-            <span class="m-left-1">font-size: {{this.minFontSize}}</span>
+            <span class="m-left-1">font-size: {{this.minFontSize}}px</span>
             <span>}</span>
-            <span>@media screen and (min-width: {{this.screenSizeFrom}}) {</span>
+            <span>@media screen and (min-width: {{this.screenSizeFrom}}px) {</span>
             <span class="m-left-1">html {</span>
-            <span class="m-left-2">font-size: calc({{this.minFontSize}} + {{this.maxFontSize - this.minFontSize}} * ((100vw - {{this.screenSizeFrom}}) / {{this.screenSizeTo - this.screenSizeFrom}}));</span>
+            <span class="m-left-2">font-size: calc({{this.minFontSize}}px + {{this.maxFontSize - this.minFontSize}} * ((100vw - {{this.screenSizeFrom}}px) / {{this.screenSizeTo - this.screenSizeFrom}}));</span>
             <span class="m-left-1">}</span>
             <span>}</span>
-            <span>@media screen and (min-width: {{this.screenSizeTo}}) {</span>
+            <span>@media screen and (min-width: {{this.screenSizeTo}}px) {</span>
             <span class="m-left-1">html {</span>
-            <span class="m-left-2">font-size: {{this.maxFontSize}};</span>
+            <span class="m-left-2">font-size: {{this.maxFontSize}}px;</span>
             <span class="m-left-1">}</span>
             <span>}</span>
           </code>
@@ -62,18 +88,18 @@ export default {
     viewport: function() {
       return `
   html {
-    font-size: ${this.minFontSize};
+    font-size: ${this.minFontSize}px;
   }
 
-  @media screen and (min-width: ${this.screenSizeFrom}) {
+  @media screen and (min-width: ${this.screenSizeFrom}px) {
     html {
-      font-size: calc(${this.minFontSize} + ${this.maxFontSize - this.minFontSize} * ((100vw - ${this.screenSizeFrom}) / ${this.screenSizeTo - this.screenSizeFrom}));
+      font-size: calc(${this.minFontSize}px + ${this.maxFontSize - this.minFontSize} * ((100vw - ${this.screenSizeFrom}px) / ${this.screenSizeTo - this.screenSizeFrom}));
     }
   }
 
-  @media screen and (min-width: ${this.screenSizeTo}) {
+  @media screen and (min-width: ${this.screenSizeTo}px) {
     html {
-      font-size: ${this.maxFontSize};
+      font-size: ${this.maxFontSize}px;
     }
   }`
     },
