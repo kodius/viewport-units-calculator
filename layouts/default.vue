@@ -38,7 +38,7 @@
           >
             <nuxt-link
               :to="item.to"
-              exact-active-class="is-active"
+              exact-active-class="is-active is-primary"
             >
               <b-icon :icon="item.icon" /> {{ item.title }}
             </nuxt-link>
@@ -50,7 +50,7 @@
         <nuxt />
       </div>
     </section>
-    <footer class="footer">
+    <footer class="footer is-primary">
       <div class="content has-text-centered">
         <p>
           Created by <a href="https://github.com/ProXyTG" target="_blank">ProXyTG</a> @ <a href="https://kodius.com/" target="_blank">Kodius </a>

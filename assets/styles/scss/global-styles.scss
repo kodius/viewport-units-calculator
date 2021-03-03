@@ -1,3 +1,69 @@
+@import "~bulma/sass/utilities/_all";
+
+$primary: #118dd6;
+$footer-background-color: $primary;
+
+$colors: mergeColorMaps(
+    (
+        "white": (
+            $white,
+            $black,
+        ),
+        "black": (
+            $black,
+            $white,
+        ),
+        "light": (
+            $light,
+            $light-invert,
+        ),
+        "dark": (
+            $dark,
+            $dark-invert,
+        ),
+        "primary": (
+            $primary,
+            $primary-invert,
+            $primary-light,
+            $primary-dark,
+        ),
+        "link": (
+            $link,
+            $link-invert,
+            $link-light,
+            $link-dark,
+        ),
+        "info": (
+            $info,
+            $info-invert,
+            $info-light,
+            $info-dark,
+        ),
+        "success": (
+            $success,
+            $success-invert,
+            $success-light,
+            $success-dark,
+        ),
+        "warning": (
+            $warning,
+            $warning-invert,
+            $warning-light,
+            $warning-dark,
+        ),
+        "danger": (
+            $danger,
+            $danger-invert,
+            $danger-light,
+            $danger-dark,
+        ),
+    ),
+    $custom-colors
+);
+
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
 html, body, #__nuxt, #__layout, .page-container {
   height: 100%;
 }
@@ -6,8 +72,11 @@ html, body {
   font-size: 1vw;
 }
 
+.menu-list a.is-active {
+  background-color: $primary;
+}
+
 .footer {
-  background-color: #7957d5;
   color: #ffffff;
   position: fixed;
   left: 0;

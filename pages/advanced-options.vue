@@ -40,7 +40,7 @@
           </code>
           </pre>
           <div class="btn-container">
-            <b-button outlined type="is-primary is-light" @click="copyValue" v-clipboard:copy="viewport">Copy!</b-button>
+            <b-button outlined type="is-primary" @click="copyValue" v-clipboard:copy="viewport">Copy!</b-button>
           </div>
         </div>
       </div>
