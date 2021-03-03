@@ -178,6 +178,10 @@ input[type="Number"] {
 .how-to-use-it-part {
   text-align: center;
   margin: 2rem;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .navbar-burger {
@@ -262,6 +266,9 @@ input[type="Number"] {
 
 
 .example-part {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 
   h3 {
     font-weight: 600;
