@@ -12,11 +12,11 @@
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12",
     "nuxt-buefy": "^0.4.4",
-    "nuxt-clipboard2": "^0.2.1"
-  },
-  "devDependencies": {
-    "fibers": "^5.0.0",
+    "nuxt-clipboard2": "^0.2.1",
     "sass": "^1.32.8",
     "sass-loader": "^10.1.1"
+  },
+  "devDependencies": {
+    "fibers": "^5.0.0"
   }
 }
