@@ -1,14 +1,18 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'viewport-units-calculator',
+    title: 'Viewport Units Converter',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'Convert px to vw here! Only for Front-end developers :)' },
+      { hid: 'og:title', property: 'og:title', content: 'Viewport Units Converter' },
+      { hid: 'og:description', property: 'og:description', content: 'Convert px to vw here! Only for Front-end developers :)' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Viewport Units Converter' },
+      { hid: 'og:type', property: 'og:type', content: 'website' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
